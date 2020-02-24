@@ -23,6 +23,6 @@ public class daysAndWeeks {
         weeks = days % 7;
 
         System.out.println("Дней " + days + " недель " + weeks);
-        
+
     }
 }
