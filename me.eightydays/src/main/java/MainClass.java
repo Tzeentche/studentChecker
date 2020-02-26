@@ -1,7 +1,6 @@
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxBinary;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class MainClass {
 
@@ -16,5 +15,12 @@ public class MainClass {
 
         WebDriver driverFox = new FirefoxDriver();
         driverFox.get("https://prelaunch.eightydays.me/");
+
+        String str = driverFox.getTitle();
+        System.out.println(str);
+
+        WebElement text = driverFox.findElement(By.xpath("//div[@id='home-form-city-start']/div/div/div"));
+
+        System.out.println(text);
     }
 }
