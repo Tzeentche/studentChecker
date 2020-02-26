@@ -1,6 +1,8 @@
 package by.sugako.arrays;
 
-public class Arrays {
+import java.util.*;
+
+public class Arrayserr {
 
     public static void main(String[] args) {
 
@@ -14,6 +16,9 @@ public class Arrays {
         String[] arrayStrings = new String[6];
 
         printArray(arrayStrings);
+
+        System.out.println(arrayStrings[5]);
+        System.out.println(Arrays.toString(arrayStrings));
     }
 
     static void printArray(int[] arrayInts) {
