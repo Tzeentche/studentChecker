@@ -30,7 +30,6 @@ public class PunctuationMarks {
 
             System.out.println("Please, try again/ And next time be more carefully!");
         }
-
         return usersTextIs;
     }
 
