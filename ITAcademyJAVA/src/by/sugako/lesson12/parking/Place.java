@@ -1,6 +1,6 @@
 package by.sugako.lesson12.parking;
 
-public class Place<T> {
+public class Place<T extends Car> {
 
     private T car;
 
