@@ -11,6 +11,4 @@ public class Car {
     public String getPlateNumber() {
         return plateNumber;
     }
-
-
 }
