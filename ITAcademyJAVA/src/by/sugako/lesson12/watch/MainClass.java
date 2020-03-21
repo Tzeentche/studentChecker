@@ -1,6 +1,6 @@
-package by.sugako.watch;
+package by.sugako.lesson12.watch;
 
-import by.sugako.watch.digitalWatch.DigitalWatch;
+import by.sugako.lesson12.watch.digitalWatch.DigitalWatch;
 
 public class MainClass {
 

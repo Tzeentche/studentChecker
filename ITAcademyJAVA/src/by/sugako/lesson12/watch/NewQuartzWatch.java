@@ -1,4 +1,4 @@
-package by.sugako.watch;
+package by.sugako.lesson12.watch;
 
 public class NewQuartzWatch extends QuartzWatch {
 

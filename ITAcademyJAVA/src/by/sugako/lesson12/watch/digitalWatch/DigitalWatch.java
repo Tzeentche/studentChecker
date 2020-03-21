@@ -1,6 +1,6 @@
-package by.sugako.watch.digitalWatch;
+package by.sugako.lesson12.watch.digitalWatch;
 
-import by.sugako.watch.AbstractWatch;
+import by.sugako.lesson12.watch.AbstractWatch;
 import java.util.*;
 
 public class DigitalWatch extends AbstractWatch {
