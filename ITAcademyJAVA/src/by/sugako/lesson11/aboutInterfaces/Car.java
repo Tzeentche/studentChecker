@@ -9,4 +9,9 @@ public class Car extends Vehicle implements Movable {
     public void drive() {
         System.out.println("Driving Car.");
     }
+
+    @Override
+    public void pay() {
+
+    }
 }
