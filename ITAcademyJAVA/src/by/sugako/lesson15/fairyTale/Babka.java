@@ -1,4 +1,4 @@
-package by.sugako.fairyTale;
+package by.sugako.lesson15.fairyTale;
 
 public class Babka {
 
