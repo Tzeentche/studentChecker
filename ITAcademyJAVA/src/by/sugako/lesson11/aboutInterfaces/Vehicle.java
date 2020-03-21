@@ -4,6 +4,8 @@ public abstract class Vehicle implements Payable, Movable {
 
     private String licensePlateNumber;
 
+    abstract void drive();
+
     public String getLicensePlateNumber() {
         return licensePlateNumber;
     }
@@ -11,7 +13,4 @@ public abstract class Vehicle implements Payable, Movable {
     public void setLicensePlateNumber(String licensePlateNumber) {
         this.licensePlateNumber = licensePlateNumber;
     }
-
-    abstract void drive();
-
 }
