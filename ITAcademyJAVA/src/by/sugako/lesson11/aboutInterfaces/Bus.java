@@ -1,4 +1,4 @@
-package by.sugako.aboutInterfaces;
+package by.sugako.lesson11.aboutInterfaces;
 
 public class Bus extends Vehicle implements Movable, Payable {
 
