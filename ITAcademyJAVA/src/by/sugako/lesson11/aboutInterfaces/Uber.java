@@ -16,12 +16,10 @@ public class Uber extends Vehicle implements Movable, Payable {
 
     public void drive() {
         System.out.println("Driving Uber.");
-        getLicensePlateNumber();
-        super.getLicensePlateNumber();
-    }
+       }
 
+       @Override
     public String getLicensePlateNumber() {
-
-        return super.getLicensePlateNumber() + "UBER";
+        return super.getLicensePlateNumber();
     }
 }
