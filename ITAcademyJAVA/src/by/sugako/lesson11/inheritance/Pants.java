@@ -1,4 +1,4 @@
-package by.sugako.inheritance;
+package by.sugako.lesson11.inheritance;
 
 public class Pants extends Clothes {
 
