@@ -2,7 +2,7 @@ package by.sugako.lesson13;
 
 import java.lang.annotation.*;
 
-//@Target(ElementType.CONSTRUCTOR)
+@Target(ElementType.CONSTRUCTOR)
 @Retention(RetentionPolicy.RUNTIME)
 
 public @interface MyFirstAnnotation {
