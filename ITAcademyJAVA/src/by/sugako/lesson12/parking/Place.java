@@ -1,4 +1,4 @@
-package by.sugako.parking;
+package by.sugako.lesson12.parking;
 
 public class Place<T> {
 
