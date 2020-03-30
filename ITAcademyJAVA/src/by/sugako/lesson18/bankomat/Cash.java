@@ -1,4 +1,4 @@
-package by.sugako.lesson17.bankomat;
+package by.sugako.lesson18.bankomat;
 
 public class Cash {
 

@@ -1,9 +1,11 @@
-package by.sugako.lesson17.client;
+package by.sugako.lesson18.client;
 
-import by.sugako.lesson17.bankomat.Bankomat;
+import by.sugako.lesson18.bankomat.Bankomat;
 
-public class ClientImpl {
+public class ClientImpl implements Client, Runnable {
 
+    private Bankomat bankomat;
+    private int clientMoney;
 
     public void setBankomat(Bankomat bankomat) {
         this.bankomat = bankomat;
@@ -12,8 +14,8 @@ public class ClientImpl {
     @Override
     public Integer getMoney(int amount) throws NoSuchAmountException {
         System.out.println("Client asked: " + amount + ".00 BYN");
-        Integer getAmount = bankomat.get(bankomat);
-        System.out.println("Bankomat give " + getAmount + ".00 BYN");
+        Integer getAmount = bankomat.get(amount);
+        System.out.println("Bankomate give " + getAmount + ".00 BYN");
         return getAmount;
     }
 
@@ -22,7 +24,7 @@ public class ClientImpl {
         while(bankomat.isOpen()) {
             try {
                 clientMoney += getMoney(1000);
-            } catch (InterruptedException e) {
+            } catch (NoSuchAmountException e) {
                 e.printStackTrace();
             }
             System.out.println("Client " + Thread.currentThread().getName() + " have " + clientMoney + ".00 BYN");

@@ -1,6 +1,4 @@
-package by.sugako.lesson17.bankomat;
-
-import by.sugako.lesson17.client.NoSuchAmountException;
+package by.sugako.lesson18.bankomat;
 
 public class BankomatImpl implements Bankomat {
 

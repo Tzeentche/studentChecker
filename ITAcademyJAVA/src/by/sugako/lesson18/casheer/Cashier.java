@@ -1,7 +1,6 @@
-package by.sugako.lesson17.casheer;
+package by.sugako.lesson18.casheer;
 
 public interface Cashier {
 
     void addMoney(Integer amount);
-    void getmoney();
 }

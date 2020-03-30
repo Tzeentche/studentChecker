@@ -1,4 +1,4 @@
-package by.sugako.lesson17.client;
+package by.sugako.lesson18.client;
 
 public class NoSuchAmountException extends Exception {
 
