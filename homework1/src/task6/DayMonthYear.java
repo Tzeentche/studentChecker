@@ -22,17 +22,16 @@ public class DayMonthYear {
         try {
 
             for (int i = 0; i < days.length; i++) {
-                System.out.println("Please, enter " + names[i] + " at format [D:M:Y]:");
+                System.out.println("Please, enter number of the " + names[i] + ":");
                 days[i] = scan.nextInt();
             }
             scan.close();
 
-            if((days[0] > 31) | (days[0]) <= 0) {
-                    System.out.println("Date is impossible! Please, try again and enter correct date!");
+            if((days[0] > 31) | (days[0] <= 0)) {
+                    System.out.println("Day is impossible! Please, try again and enter correct date!");
                     System.exit(0);
-            }
 
-            if((days[1] > 13) | (days[1]) <= 0) {
+            } else if((days[1] > 12) || (days[1] <= 0)) {
                     System.out.println("Month is impossible! Please, try again and enter correct moth!");
                     System.exit(0);
 
@@ -44,6 +43,7 @@ public class DayMonthYear {
         } catch(InputMismatchException ex) {
 
             System.out.println("You did something wrong. Try again!");
+            System.exit(-1);
         }
 
         System.out.println("Next day date is " + userOutput(days));
