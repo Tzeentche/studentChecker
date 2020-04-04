@@ -1,4 +1,4 @@
-package by.sugako.lesson20.second;
+package by.sugako.lesson20;
 
 public class Main {
 
