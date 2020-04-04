@@ -2,12 +2,12 @@ package by.sugako.lesson20.third;
 
 public class ThirdUsage {
 
-    static void sum(Integer i1, Integer i2, Integer i3) {
-        System.out.println(i1 + i2 + i3);
+    static <T extends Integer> void sum(T i1, T i2, T i3) {
+        System.out.println(i1.intValue() + i2.intValue() + i3.intValue());
     }
 
-    void multiply(Integer i1, Integer i2, Integer i3) {
-        System.out.println(i1 * i2 * i3);
+    <T extends Integer> void multiply(T i1, T i2, T i3) {
+        System.out.println(i1.intValue() * i2.intValue() * i3.intValue());
     }
 
     public void execute(ThirdInterface thirdInterface, int a, int b, int c) {
