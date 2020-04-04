@@ -1,7 +1,7 @@
 package by.sugako.lesson20.third;
 
 @FunctionalInterface
-public interface ThirdInterface {
+public interface ThirdInterface<T extends Integer> {
 
-    void doSomething(Integer a, Integer b, Integer c);
+        void doSomething(T a, T b, T c);
 }
