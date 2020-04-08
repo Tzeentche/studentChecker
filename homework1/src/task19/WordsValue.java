@@ -36,7 +36,7 @@ public class WordsValue {
     }
 
     String[] splitUsersText(String incomingText) {
-        String[] splitUsersText = incomingText.split(" +");
+        String[] splitUsersText = incomingText.replaceAll("[\"+%,.!?;:-]", "").split(" +");
 
         return splitUsersText;
     }
