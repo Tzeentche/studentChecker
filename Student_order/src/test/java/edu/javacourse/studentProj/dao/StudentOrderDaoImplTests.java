@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 class DictionaryDaoImplTests {
 
+
     @BeforeClass
     public static void startUp() throws Exception {
         URL url1 = DictionaryDaoImplTests.class.getClassLoader()
