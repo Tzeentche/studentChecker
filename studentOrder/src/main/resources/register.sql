@@ -36,6 +36,8 @@ CREATE TABLE cr_address (
 
 INSERT INTO cr_address (district_code, street_code, building, extension, apartment)
 VALUES (1, 1, '10', '2', '121');
+INSERT INTO cr_address (district_code, street_code, building, extension, apartment)
+VALUES (1, 1, '271', null, '4');
 
 CREATE TABLE cr_person (
     person_id SERIAL,
