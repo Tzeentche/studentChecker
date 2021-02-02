@@ -40,5 +40,4 @@ public class PersonCheckDao {
             return DriverManager.getConnection("jdbc:postgresql://localhost/city_register",
                     "postgres", "postgres");
         }
-    }
 }
