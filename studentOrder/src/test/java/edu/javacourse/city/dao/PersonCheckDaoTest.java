@@ -31,4 +31,22 @@ public class PersonCheckDaoTest {
         Assert.assertTrue(ps.isRegistered());
         Assert.assertTrue(ps.isTemporal());
     }
+
+    @Test
+    public void checkPerson2() throws PersonCheckException {
+
+        PersonRequest pr = new PersonRequest();
+        pr.setSurName("Васильева");
+        pr.setGivenName("Ирина");
+        pr.setPatronymic("Петровна");
+        pr.setDateOfBirth(LocalDate.of(1995, 3, 18));
+        pr.setStreetCode(1);
+        pr.setBuilding("271");
+        pr.setApartment("4");
+
+        PersonCheckDao dao = new PersonCheckDao();
+        PersonResponse ps = dao.checkPerson(pr);
+        Assert.assertTrue(ps.isRegistered());
+        Assert.assertTrue(ps.isTemporal());
+    }
 }
