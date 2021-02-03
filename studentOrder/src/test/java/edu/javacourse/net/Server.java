@@ -10,6 +10,7 @@ public class Server {
 
         ServerSocket socket = new ServerSocket(25225);
 
+        System.out.println("Server is started");
         while(true) {
             Socket client = socket.accept();
             handleRequest(client);
@@ -23,6 +24,7 @@ public class Server {
 
         StringBuilder sb = new StringBuilder("Hello, ");
         String userName = br.readLine();
+        System.out.println("Server got dtring: " + userName);
 
         sb.append(userName);
         bw.write(sb.toString());
