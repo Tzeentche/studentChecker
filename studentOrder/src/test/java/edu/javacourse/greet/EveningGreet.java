@@ -1,4 +1,10 @@
 package edu.javacourse.greet;
 
-public class EveningGreet {
+import edu.javacourse.net.Greetable;
+
+public class EveningGreet extends Greetable {
+    @Override
+    public String buildResponse(String userName) {
+        return "Good evening, " + userName;
+    }
 }
