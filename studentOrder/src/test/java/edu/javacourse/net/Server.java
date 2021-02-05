@@ -38,11 +38,15 @@ class SimpleServer extends Thread {
             BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
 
-            StringBuilder sb = new StringBuilder("Hello, ");
-            String userName = br.readLine();
-            System.out.println("Server got dtring: " + userName);
+            String request = br.readLine();
+            String[] lines = request.split("\\s+");
+            String command = lines[0];
+            String userName = lines[1];
+            System.out.println("Server got dtring 1: " + command);
+            System.out.println("Server got dtring 2: " + userName);
             Thread.sleep(2000);
 
+            StringBuilder sb = new StringBuilder("Hello, ");
             sb.append(userName);
             bw.write(sb.toString());
             bw.newLine();
