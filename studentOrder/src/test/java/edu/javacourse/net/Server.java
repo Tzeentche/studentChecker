@@ -46,9 +46,8 @@ class SimpleServer extends Thread {
             System.out.println("Server got dtring 2: " + userName);
             Thread.sleep(2000);
 
-            StringBuilder sb = new StringBuilder("Hello, ");
-            sb.append(userName);
-            bw.write(sb.toString());
+            String response = buildResponse(command, userName);
+            bw.write(response);
             bw.newLine();
             bw.flush();
 
@@ -59,6 +58,17 @@ class SimpleServer extends Thread {
         } catch(Exception ex) {
 
             ex.printStackTrace(System.out);
+         }
+    }
+
+    public String buildResponse(String command, String userName) {
+
+        switch(command) {
+            case "HELLO": return "HELLO, " + userName;
+            case "MORNING": return "Good morning, " + userName;
+            case "DAY": return "Good day, " + userName;
+            case "EVENING": return "Good evening, " + userName;
+            default: return "Hi, " + userName;
         }
     }
 }
