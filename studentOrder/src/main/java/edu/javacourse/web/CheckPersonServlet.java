@@ -1,4 +1,6 @@
 package edu.javacourse.web;
 
-public class CheckPersonServlet {
+import javax.servlet.http.HttpServlet;
+
+public class CheckPersonServlet extends HttpServlet {
 }
