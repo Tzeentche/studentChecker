@@ -29,6 +29,6 @@ public class PoolConnectionBuilder implements ConnectionBuilder {
 
     @Override
     public Connection getConnection() throws SQLException {
-        return null;
+        return dataSource.getConnection();
     }
 }
