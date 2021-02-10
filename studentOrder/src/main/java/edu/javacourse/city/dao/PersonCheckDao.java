@@ -26,6 +26,10 @@ public class PersonCheckDao {
         this.connectionBuilder = connectionBuilder;
     }
 
+    private Connection getConnection() throws SQLException {
+        return connectionBuilder.getConnection();
+    }
+    
     public PersonResponse checkPerson(PersonRequest request) throws PersonCheckException {
         PersonResponse response = new PersonResponse();
 
@@ -71,8 +75,5 @@ public class PersonCheckDao {
         }
 
             return response;
-        }
-        private Connection getConnection() throws SQLException {
-            return connectionBuilder.getConnection();
         }
 }
