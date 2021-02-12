@@ -29,7 +29,7 @@ public class PersonCheckDao {
     private Connection getConnection() throws SQLException {
         return connectionBuilder.getConnection();
     }
-    
+
     public PersonResponse checkPerson(PersonRequest request) throws PersonCheckException {
         PersonResponse response = new PersonResponse();
 
