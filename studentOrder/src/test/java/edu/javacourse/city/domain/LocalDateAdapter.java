@@ -17,4 +17,5 @@ public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
     public String marshal(LocalDate localDate) throws Exception {
         return v.format(DateTimeFormatter.ofPattern(PATTERN));
     }
+
 }
