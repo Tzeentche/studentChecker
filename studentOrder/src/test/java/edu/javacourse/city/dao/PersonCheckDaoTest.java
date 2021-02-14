@@ -36,6 +36,7 @@ public class PersonCheckDaoTest {
     @Test
     public void checkPerson2() throws PersonCheckException {
 
+
         PersonRequest pr = new PersonRequest();
         pr.setSurName("Васильева");
         pr.setGivenName("Ирина");
