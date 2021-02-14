@@ -3,6 +3,7 @@ package edu.javacourse.city.domain;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
+
     public class PersonRequest
     {
         private String surName;
