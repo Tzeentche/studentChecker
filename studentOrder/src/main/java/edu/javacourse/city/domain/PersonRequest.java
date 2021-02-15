@@ -1,13 +1,15 @@
 package edu.javacourse.city.domain;
 
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class PersonRequest {
 
     private String surName;
     private String givenName;
     private String patronymic;
-    private LocalDate dateOfBirth;
+    @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     private Integer streetCode;
     private String building;
     private String extension;
