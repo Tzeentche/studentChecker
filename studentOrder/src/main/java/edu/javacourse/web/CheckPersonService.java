@@ -33,10 +33,11 @@ public class CheckPersonService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public PersonResponse checkPerson(PersonRequest request) throws PersonCheckException {
-
         logger.info(request.toString());
 
-        return dao.checkPerson(request);
+        throw new PersonCheckException("EXCEPTION");
+
+//        return dao.checkPerson(request);
     }
 }
 
