@@ -43,8 +43,9 @@ public class PersonCheckDaoTest {
         pr.setPatronymic("Петровна");
         pr.setDateOfBirth(LocalDate.of(1995, 3, 18));
         pr.setStreetCode(1);
-        pr.setBuilding("271");
-        pr.setApartment("4");
+        pr.setBuilding("10");
+        pr.setExtension("2");
+        pr.setApartment("121");
 
         PersonCheckDao dao = new PersonCheckDao();
         dao.setConnectionBuilder(new DirectConnectionBuilder());
