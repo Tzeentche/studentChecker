@@ -27,6 +27,12 @@ public class PersonManager {
         Long id = (Long)session.save(p);
 
         session.getTransaction().commit();
+        session.close();
+
+        session = sf.openSession();
+        Person person = session.get(Person.class, id);
+        System.out.println(person);
+        session.close();
     }
 
     private static SessionFactory buildSessionFactory() {
