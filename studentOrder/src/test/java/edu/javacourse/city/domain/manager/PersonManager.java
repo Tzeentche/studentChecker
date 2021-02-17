@@ -10,6 +10,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import javax.imageio.spi.ServiceRegistry;
 import java.io.Serializable;
+import java.util.List;
 
 public class PersonManager {
 
@@ -32,6 +33,13 @@ public class PersonManager {
         session = sf.openSession();
         Person person = session.get(Person.class, id);
         System.out.println(person);
+        session.close();
+
+        session = sf.openSession();
+
+        List<Person> list = session.createQuery("FRON Person", Person.class).list();
+        list.forEach(p1 -> System.out.println(p1));
+        
         session.close();
     }
 
