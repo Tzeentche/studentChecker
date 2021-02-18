@@ -9,6 +9,9 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import javax.imageio.spi.ServiceRegistry;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.io.Serializable;
 import java.util.List;
 
@@ -16,6 +19,33 @@ public class PersonManager {
 
     public static void main(String[] args) {
 
+        sessionExample();
+
+        jpaExample();
+    }
+
+    private static void jpaExample() {
+        EntityManagerFactory em = Persistence.createEntityManagerFactory("persistence");
+
+        EntityManager em = emf.createEntityManager();
+
+        em.getTransaction().begin();
+        Person p = new Person();
+        p.setFirstName("Алексей");
+        p.setLastName("Федоров");
+        em.persist(p);
+        System.out.println(p.getPersonId());
+
+        em.getTransaction().commit();
+
+        em = emf.createEntityManager();
+        List list = em.createQuery("FROM person").getResultList();
+        list.forEach(p1 -> System.out.println(p1));
+
+        em.close();
+    }
+
+    private static void sessionExample() {
         SessionFactory sf = buildSessionFactory();
 
         Session session = sf.openSession();
@@ -39,7 +69,7 @@ public class PersonManager {
 
         List<Person> list = session.createQuery("FRON Person", Person.class).list();
         list.forEach(p1 -> System.out.println(p1));
-        
+
         session.close();
     }
 
