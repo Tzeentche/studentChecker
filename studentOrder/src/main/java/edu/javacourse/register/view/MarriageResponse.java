@@ -1,4 +1,6 @@
 package edu.javacourse.register.view;
 
-public class MarriageResponse {
+import java.io.Serializable;
+
+public class MarriageResponse implements Serializable {
 }
