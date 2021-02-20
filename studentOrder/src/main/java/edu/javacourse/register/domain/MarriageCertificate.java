@@ -2,9 +2,9 @@ package edu.javacourse.register.domain;
 
 import java.time.LocalDate;
 
-public class MarriageSertificate {
+public class MarriageCertificate {
 
-    private Long marriageSertificateId;
+    private Long marriageCertificateId;
     private String number;
     private LocalDate issueDate;
     private PersonMale husband;
@@ -12,12 +12,12 @@ public class MarriageSertificate {
     private boolean active;
     private LocalDate endDate;
 
-    public Long getMarriageSertificateId() {
-        return marriageSertificateId;
+    public Long getMarriageCertificateId() {
+        return marriageCertificateId;
     }
 
-    public void setMarriageSertificateId(Long marriageSertificateId) {
-        this.marriageSertificateId = marriageSertificateId;
+    public void setMarriageCertificateId(Long marriageCertificateId) {
+        this.marriageCertificateId = marriageCertificateId;
     }
 
     public String getNumber() {
