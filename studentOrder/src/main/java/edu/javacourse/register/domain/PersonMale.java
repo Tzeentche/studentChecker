@@ -1,4 +1,4 @@
 package edu.javacourse.register.domain;
 
-public class PersonMale {
+public class PersonMale extends Person {
 }
