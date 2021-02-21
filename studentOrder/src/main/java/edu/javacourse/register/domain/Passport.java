@@ -1,13 +1,23 @@
 package edu.javacourse.register.domain;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Table (name = "ro_passport")
+@Entity
 public class Passport {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "passport_id")
     private Long PassportId;
+    @Column(name = "serial")
     private String serial;
-    private String number;
+    @Column(name = "nummber")
+    private String nummber;
+    @Column(name = "date_issue")
     private LocalDate issueDate;
+    @Column(name = "issue_department")
     private String issueDepartment;
 
     public Long getPassportId() {
@@ -26,12 +36,12 @@ public class Passport {
         this.serial = serial;
     }
 
-    public String getNumber() {
-        return number;
+    public String getNummber() {
+        return nummber;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setNummber(String nummber) {
+        this.nummber = nummber;
     }
 
     public LocalDate getIssueDate() {
