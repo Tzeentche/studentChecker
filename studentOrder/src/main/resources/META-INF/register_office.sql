@@ -12,9 +12,11 @@ CREATE TABLE ro_person (
 
 CREATE TABLE ro_passport (
     passport_id SERIAL,
+    person_id Integer not null,
     seria varchar(10),
     nummber varchar(10),
     date_issue date not null,
     issue_department varchar(200),
     PRIMARY KEY (passport_id)
+    FOREIGN KEY (person_id) REFERENCES ro_person(person_id) ON DELETE RESTRICT
 );
