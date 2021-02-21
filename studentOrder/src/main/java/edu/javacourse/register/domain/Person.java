@@ -1,14 +1,24 @@
 package edu.javacourse.register.domain;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
+@Table (name = "ro_person")
+@Entity
 public class Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "person_id")
     private Long personId;
+    @Column (name = "firstName")
     private String firstName;
+    @Column (name = "lastName")
     private String lastName;
-    private String patronimyc;
+    @Column (name = "patronymic")
+    private String patronymic;
+    @Column (name = "date_birth")
     private LocalDate dateOfBirth;
     private List<Passport> passports;
 
@@ -36,12 +46,12 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public String getPatronimyc() {
-        return patronimyc;
+    public String getPatronymic() {
+        return patronymic;
     }
 
-    public void setPatronimyc(String patronimyc) {
-        this.patronimyc = patronimyc;
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
     }
 
     public LocalDate getDateOfBirth() {
