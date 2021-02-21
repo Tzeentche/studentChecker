@@ -1,7 +1,9 @@
 package edu.javacourse.register.domain;
 
+import javax.persistence.Entity;
 import java.util.List;
 
+@Entity
 public class PersonMale extends Person {
 
     private List<MarriageCertificate> marriageCertificates;
