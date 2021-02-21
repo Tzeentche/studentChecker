@@ -11,6 +11,9 @@ public class Passport {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "passport_id")
     private Long PassportId;
+    @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "person_id")
+    private Person person;
     @Column(name = "serial")
     private String serial;
     @Column(name = "nummber")
@@ -26,6 +29,14 @@ public class Passport {
 
     public void setPassportId(Long passportId) {
         PassportId = passportId;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     public String getSerial() {
