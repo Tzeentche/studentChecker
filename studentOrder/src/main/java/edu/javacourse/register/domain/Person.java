@@ -20,6 +20,7 @@ public class Person {
     private String patronymic;
     @Column (name = "date_birth")
     private LocalDate dateOfBirth;
+    @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY, mappedBy = "person")
     private List<Passport> passports;
 
     public Long getPersonId() {
@@ -29,6 +30,8 @@ public class Person {
     public void setPersonId(Long personId) {
         this.personId = personId;
     }
+
+
 
     public String getFirstName() {
         return firstName;
