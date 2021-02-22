@@ -1,6 +1,7 @@
 DROP TABLE if EXISTS ro_person;
 DROP TABLE if EXISTS ro_passport;
 DROP TABLE if EXISTS ro_birth_certificate;
+DROP TABLE if EXISTS ro_marriage_certificate;
 
 CREATE TABLE ro_person (
     person_id SERIAL,
@@ -46,14 +47,18 @@ CREATE TABLE ro_marriage_certificate (
     wife_id integer not null,
     active boolean DEFAULT false,
     end_date date,
-    PRIMARY KEY (birth_certificate_id),
+    PRIMARY KEY (marriage_certificate_id),
     FOREIGN KEY (husband_id) REFERENCES ro_person(person_id) ON DELETE RESTRICT,
     FOREIGN KEY (wife_id) REFERENCES ro_person(person_id) ON DELETE RESTRICT
 );
 
-INSERT IN ro_person (sex, first_name, last_name, patronymic, date_birth)
-VALUES (1, 'Елена', 'Васильева', 'Сергеевна', 1998-03-24),
-VALUES (2, 'Олег', 'Васильев', 'Петрович', 1997-10-16);
+INSERT INTO ro_person (sex, first_name, last_name, patronymic, date_birth)
+VALUES (1, 'Елена', 'Васильева', 'Сергеевна', '1998-03-24'),
+(2, 'Олег', 'Васильев', 'Петрович', '1997-10-16'),
+(1, 'Николай', 'Васильев', 'Олегович', '2018-10-21');
 
-INSERT IN ro_passport (person_id, seria, nummber, dateIssue, issueDepartment)
+INSERT INTO ro_passport (person_id, seria, nummber, dateIssue, issueDepartment)
 VALUES (1, '40000', '123456', '2018-4-10', 'Department passport')
+
+INSERT INTO ro_birth_certificate(number_certificate, date_issue, person_id, mother_id, father_id) values
+('123 Birth', '2018-10-01', 3, 1, 2)
