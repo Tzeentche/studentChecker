@@ -1,14 +1,15 @@
 package edu.javacourse.register.domain;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @DiscriminatorValue("1")
 public class PersonFemale extends Person {
 
+    @OneToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY, mappedBy = "wife")
     private List<MarriageCertificate> marriageCertificates;
+    @OneToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY, mappedBy = "mother")
     private List<BirthCertificate> birthCertificates;
 
     public List<MarriageCertificate> getMarriageCertificates() {
