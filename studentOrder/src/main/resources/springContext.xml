@@ -4,7 +4,7 @@
         http://www.springframework.org/schema/beansspring-beans.xsd">
 
     <bean id = "dao" class = "edu.javacourse.register.dao.MarriageDao">
-        <property name = "test" value = "SIMPLE"/>
+        <property name = "test" value = "SIMPLE_NEW"/>
     </bean>
 
     <bean id = "dao" class = "edu.javacourse.register.business.MarriageManager">
