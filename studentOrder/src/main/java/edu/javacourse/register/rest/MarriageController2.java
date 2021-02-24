@@ -1,4 +1,7 @@
 package edu.javacourse.register.rest;
 
-public class MarriageController2 {
+import org.springframework.stereotype.Service;
+
+@Service
+public class MarriageController2 extends MarriageController{
 }
