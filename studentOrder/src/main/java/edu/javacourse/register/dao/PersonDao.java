@@ -17,4 +17,18 @@ public class PersonDao {
 
         return query.getResultList();
     }
+
+    public Long addPerson(Person person) {
+
+        EntityTransaction tr = entityManager.getTransaction();
+        tr.begin();
+        try {
+            entityManager.persist(person);
+            entityManager.flush();
+        } catch (Exception ex) {
+            tr.rollback();
+            throw new RuntimeException(ex);
+        }
+        return person.getPersonId();
+    }
 }
