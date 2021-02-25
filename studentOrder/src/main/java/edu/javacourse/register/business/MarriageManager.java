@@ -15,6 +15,7 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 
 @Service("marriageService")
@@ -28,6 +29,7 @@ public class MarriageManager {
     @Autowired
     private PersonDao personDao;
 
+    @Transactional()
     public MarriageResponse findMarriageCertificate(MarriageRequest request) {
         LOGGER.info("findMarriageCertificate called");
         MarriageCertificate cert = marriageDao.findMarriageCertificate(request);
