@@ -13,8 +13,8 @@ public class Starter {
                 new String[]{"springContext.xml"}
         );
 
-        MarriageController controller = context.getBean(MarriageController.class);
+//        MarriageController controller = context.getBean(MarriageController.class);
 //        MarriageController controller = context.getBean("controller", MarriageController.class);
-        controller.findMarriageCertificate(new MarriageRequest());
+//        controller.findMarriageCertificate(new MarriageRequest());
     }
 }
