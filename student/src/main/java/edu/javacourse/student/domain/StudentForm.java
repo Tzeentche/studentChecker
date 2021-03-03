@@ -1,4 +1,6 @@
 package edu.javacourse.student.domain;
 
-public class StudentForm {
+public enum StudentForm {
+
+    DAY, EVENING, REMOTE
 }
