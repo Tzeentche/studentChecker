@@ -1,4 +1,4 @@
-package edu.javacourse.student.domain;
+package edu.javacourse.student;
 
 public enum StudentForm {
 
