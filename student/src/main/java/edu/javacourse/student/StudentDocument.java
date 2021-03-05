@@ -1,6 +1,7 @@
 package edu.javacourse.student;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Table(name = "sr_student_document")
 @Entity
@@ -11,11 +12,11 @@ public class StudentDocument {
     @Column(name = "document_Id")
     private Long documentId;
     @Column(name = "document_number")
-    private String documntNumber;
+    private String documentNumber;
     @Column(name = "document_date")
-    private String documntDate;
+    private LocalDate documentDate;
     @Column(name = "expire_date")
-    private String expireDate;
+    private LocalDate expireDate;
     @ManyToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id")
     private Student student;
@@ -24,7 +25,7 @@ public class StudentDocument {
     private Faculty faculty;
     @Column(name = "student_form")
     @Enumerated
-    private StudentForm studentFrom;
+    private StudentForm studentForm;
 
     public Long getDocumentId() {
         StudentForm.DAY.ordinal();
@@ -35,27 +36,27 @@ public class StudentDocument {
         this.documentId = documentId;
     }
 
-    public String getDocumntNumber() {
-        return documntNumber;
+    public String getDocumentNumber() {
+        return documentNumber;
     }
 
-    public void setDocumntNumber(String documntNumber) {
-        this.documntNumber = documntNumber;
+    public void setDocumentNumber(String documentNumber) {
+        this.documentNumber = documentNumber;
     }
 
-    public String getDocumntDate() {
-        return documntDate;
+    public LocalDate getDocumentDate() {
+        return documentDate;
     }
 
-    public void setDocumntDate(String documntDate) {
-        this.documntDate = documntDate;
+    public void setDocumentDate(LocalDate documentDate) {
+        this.documentDate = documentDate;
     }
 
-    public String getExpireDate() {
+    public LocalDate getExpireDate() {
         return expireDate;
     }
 
-    public void setExpireDate(String expireDate) {
+    public void setExpireDate(LocalDate expireDate) {
         this.expireDate = expireDate;
     }
 
@@ -75,11 +76,11 @@ public class StudentDocument {
         this.faculty = faculty;
     }
 
-    public StudentForm getStudentFrom() {
-        return studentFrom;
+    public StudentForm getStudentForm() {
+        return studentForm;
     }
 
-    public void setStudentFrom(StudentForm studentFrom) {
-        this.studentFrom = studentFrom;
+    public void setStudentForm(StudentForm studentForm) {
+        this.studentForm = studentForm;
     }
 }
