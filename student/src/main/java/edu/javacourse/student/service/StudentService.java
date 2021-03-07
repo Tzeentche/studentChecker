@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,6 +22,8 @@ public class StudentService {
 
     @Autowired
     private StudentRepository studentRepository;
+
+    @Transactional
     public List<StudentResponse> getStudentInfo(StudentRequest request) {
 
         List<Student> student = studentRepository.findStudent(request.getLastName(),
