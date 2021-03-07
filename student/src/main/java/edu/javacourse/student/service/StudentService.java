@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class StudentService {
@@ -34,12 +35,24 @@ public class StudentService {
 
             return Collections.EMPTY_LIST;
 
-        } else {
-
-            List<StudentDocument> docs = student.get(0).get
         }
 
+        List<StudentDocument> docs = student.get(0).getDocuments();
+        List<StudentResponse> result = docs.stream().map(d -> getResponse(d)).collect(Collectors.toList());
 
-        return null;
+        return result;
+    }
+
+    private StudentResponse getResponse(StudentDocument doc) {
+
+        StudentResponse sr = new StudentResponse();
+        sr.setDocumentNumber(doc.getDocumentNumber());
+        sr.setDocumentDate(doc.getDocumentDate());
+        sr.setExpireDate(doc.getExpireDate());
+        sr.setFacultyName(doc.getFaculty().getFacultyName());
+        sr.getUniversityName(doc.getFaculty().getUniversity().getUniversityName());
+        sr.setStudentForm(doc.getStudentForm().toString());
+
+        return sr;
     }
 }
