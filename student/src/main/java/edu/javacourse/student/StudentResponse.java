@@ -44,8 +44,8 @@ public class StudentResponse {
         this.facultyName = facultyName;
     }
 
-    public String getUniversityName() {
-        return universityName;
+    public String getUniversityName(Long universityName) {
+        return this.universityName;
     }
 
     public void setUniversityName(String universityName) {
