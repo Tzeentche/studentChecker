@@ -1,12 +1,17 @@
 package edu.javacourse.student;
 
+import edu.javacourse.student.view.LocalDateAdapter;
+
 import javax.persistence.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
 public class StudentResponse {
 
     private String documentNumber;
+    @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     private LocalDate documentDate;
+    @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     private LocalDate expireDate;
     private String facultyName;
     private String universityName;
